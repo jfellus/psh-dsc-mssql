@@ -3,6 +3,6 @@ $cwd=get-location
 ./mssql.exe /action=download /quiet /mediapath=$cwd/mssql /mediatype=iso
 
 $r = Mount-DiskImage (get-item mssql/*.iso) -passthru
-$vol = ($r | get-volume).DriveLetter
+$drive = ($r | get-volume).DriveLetter
 dismount-diskimage (get-item mssql/*.iso)
 
