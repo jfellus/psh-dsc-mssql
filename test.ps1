@@ -34,3 +34,6 @@ Configuration SQLInstall {
      }
 }
 
+
+SQLInstall
+Start-DscConfiguration -Path C:\SQLInstall -Wait -Force -Verbose
