@@ -18,8 +18,7 @@ Dismount-DiskImage $mountResult.ImagePath
 Configuration SQLInstall {
     Import-DscResource -ModuleName SqlServerDsc
 
-node localhost
-     {
+    node localhost {
           WindowsFeature 'NetFramework45'
           {
                Name   = 'NET-Framework-45-Core'
