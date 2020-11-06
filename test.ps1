@@ -13,4 +13,4 @@ $mountResult = Mount-DiskImage -ImagePath 'C:\en_sql_server_2017_enterprise_x64_
 $volumeInfo = $mountResult | Get-Volume
 $driveInfo = Get-PSDrive -Name $volumeInfo.DriveLetter
 Copy-Item -Path ( Join-Path -Path $driveInfo.Root -ChildPath '*' ) -Destination C:\SQL2017\ -Recurse
-Dismount-DiskImage $mountResult.-ImagePath
+Dismount-DiskImage $mountResult.ImagePath
