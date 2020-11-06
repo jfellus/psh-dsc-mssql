@@ -5,5 +5,6 @@ $cwd=get-location
 $r = Mount-DiskImage (get-item mssql/*.iso) -passthru
 $drive = ($r | get-volume).DriveLetter
 cd ${drive}:/
+./setup /qs /ACTION=Install /FEATURES=SQLEngine /INSTANCENAME=MSSQLSERVER /SQLSYSADMINACCOUNTS="WHYTE\Domain Admins" /IACCEPTSQLSERVERLICENSETERMS
 dismount-diskimage (get-item mssql/*.iso)
 
