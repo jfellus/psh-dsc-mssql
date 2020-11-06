@@ -1,13 +1,4 @@
-[Net.ServicePointManager]::SecurityProtocol
-Set-ItemProperty -Path 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\.NetFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
-Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NetFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
-[Net.ServicePointManager]::SecurityProtocol
-
-Install-PackageProvider -Name NuGet -Force
-Install-Module -Name SqlServerDsc -Force
-
-iwr https://archive.org/download/en_sql_server_2017_enterprise_x64_dvd_11293666/en_sql_server_2017_enterprise_x64_dvd_11293666.iso -outfile C:\en_sql_server_2017_enterprise_x64_dvd_11293666.iso
-
+iwr https://go.microsoft.com/fwlink/?linkid=866664 -outfile mssql.exe
 New-Item -Path C:\SQL2017 -ItemType Directory
 $mountResult = Mount-DiskImage -ImagePath 'C:\en_sql_server_2017_enterprise_x64_dvd_11293666.iso' -PassThru
 $volumeInfo = $mountResult | Get-Volume
