@@ -39,3 +39,5 @@ SQLInstall
 Start-DscConfiguration -Path C:\SQLInstall -Wait -Force -Verbose
 
 Test-DscConfiguration
+
+Get-Service -Name *SQL*
