@@ -18,8 +18,8 @@ Dismount-DiskImage $mountResult.ImagePath
 Configuration SQLInstall {
     Import-DscResource -ModuleName SqlServerDsc
     WindowsFeature 'NetFramework45' {
-     Name = 'Net-Framework-45-Core'
-     Ensure = 'Present'
+        Name = 'Net-Framework-45-Core'
+        Ensure = 'Present'
     }
 }
 
