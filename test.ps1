@@ -16,7 +16,6 @@ Copy-Item -Path ( Join-Path -Path $driveInfo.Root -ChildPath '*' ) -Destination 
 Dismount-DiskImage $mountResult.ImagePath
 
 Configuration SQLInstall {
-
+    Import-DscResource -ModuleName SqlServerDsc
 }
 
-Import-DscResource -ModuleName SqlServerDsc
