@@ -1,1 +1,1 @@
-echo "ok"
+[Net.ServicePointManager]::SecurityProtocol
