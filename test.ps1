@@ -4,4 +4,4 @@ Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NetFramework\v4.0.30319' -Name
 [Net.ServicePointManager]::SecurityProtocol
 
 Install-PackageProvider -Name NuGet -Force
-Install-Module -Name SqlServerDsc
+Install-Module -Name SqlServerDsc -Force
