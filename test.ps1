@@ -6,6 +6,8 @@ Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NetFramework\v4.0.30319' -Name
 Install-PackageProvider -Name NuGet -Force
 Install-Module -Name SqlServerDsc -Force
 
+iwr https://archive.org/download/en_sql_server_2017_enterprise_x64_dvd_11293666/en_sql_server_2017_enterprise_x64_dvd_11293666.iso 
+
 New-Item -Path C:\SQL2017 -ItemType Directory
 $mountResult = Mount-DiskImage -ImagePath 'C:\en_sql_server_2017_enterprise_x64_dvd_11293666.iso' -PassThru
 $volumeInfo = $mountResult | Get-Volume
