@@ -4,6 +4,6 @@ $cwd=get-location
 
 $r = Mount-DiskImage (get-item mssql/*.iso) -passthru
 $vol = $r | get-volume
-$drive = Get-PSDrive -Name $volumeInfo.DriveLetter
+$drive = Get-PSDrive -Name $vol.DriveLetter
 dismount-diskimage (get-item mssql/*.iso)
 
