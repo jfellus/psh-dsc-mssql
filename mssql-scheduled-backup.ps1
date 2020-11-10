@@ -1,5 +1,7 @@
 # As .\administrator
 
+add-localgroupmember administrators ctlabs\sql_admin
+
 mkdir c:\db_backups
 
 $acl = get-acl c:\db_backups
