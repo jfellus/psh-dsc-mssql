@@ -3,13 +3,13 @@
 mkdir c:\db_backups
 
 $acl = get-acl c:\db_backups
-$n = new-object system.security.accesscontrol.filesystemaccessrule -argumentlist ctlabs\sql_svc, FullControl, allow
-$acl.setaccessrule($n)
+$n = new-object system.security.accesscontrol.filesystemaccessrule("ctlabs\sql_svc", "FullControl", "ContainerInherit, ObjectInherit", "None", "Allow")
+$acl.AddAccessRule($n)
 set-acl c:\db_backups $acl
 
 $acl = get-acl c:\db_backups
-$n = new-object system.security.accesscontrol.filesystemaccessrule -argumentlist ctlabs\sql_admin, FullControl, allow
-$acl.setaccessrule($n)
+$n = new-object system.security.accesscontrol.filesystemaccessrule("ctlabs\sql_admin", "FullControl", "ContainerInherit, ObjectInherit", "None", "Allow")
+$acl.AddAccessRule($n)
 set-acl c:\db_backups $acl
 
 new-smbshare -name db_backups -path c:\db_backups
