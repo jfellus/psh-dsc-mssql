@@ -1,5 +1,6 @@
 # this script is run as a scheduled task by ctlabs\sql_admin
 
+# Dump the database "db" into c:\db_backups\<date>.sql.zip as a zipped SQL file
 $db = get-sqldatabase -serverinstance localhost -name db
 $db.tables.enumscript()
 $o = new-object microsoft.sqlserver.management.smo.scriptingoptions
