@@ -12,6 +12,9 @@ $n = new-object system.security.accesscontrol.filesystemaccessrule -argumentlist
 $acl.setaccessrule($n)
 set-acl c:\db_backups $acl
 
+new-smbshare -name db_backups -path c:\db_backups
+grant-smbshareaccess -name db_backups -accountname ctlabs\sql_svc -accessright full
+revoke-smbshareaccess -name db_backups -accountname everyone
 
 
 # As ctlabs\sql_admin 
