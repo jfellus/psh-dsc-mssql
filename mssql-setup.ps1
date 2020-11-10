@@ -3,7 +3,7 @@
 New-ADUser -Name "SQLServer Service Account" -UserPrincipalName sql_svc `
         -SamAccountName sql_svc `
         -ServicePrincipalNames "SQL/iis.ctlabs.ct-square.com" `
-        -AccountPassword (convertto-securestring "Passw0rd" -asplaintext -force) `
+        -AccountPassword (convertto-securestring "Passw0rd!" -asplaintext -force) `
         -PasswordNeverExpires $True `
         -PassThru -erroraction stop | Enable-ADAccount
 
