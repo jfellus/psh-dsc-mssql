@@ -1,4 +1,4 @@
-# As ctlabs\sql_admin 
+# this script is run as a scheduled task by ctlabs\sql_admin
 
 $db = get-sqldatabase -serverinstance localhost -name db
 $db.tables.enumscript()
