@@ -19,7 +19,7 @@ revoke-smbshareaccess -name db_backups -accountname everyone
 # Scheduled task 
 
 cp ./mssql-dump-backup.ps1 c:\db_backup.ps1
-$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-NonInteractive -NoLogo -NoProfile -File "C:\db_backup.ps1"'
+$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-NonInteractive -ep bypass -NoLogo -NoProfile -File "C:\db_backup.ps1"'
 $Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).date -repetitioninterval (New-Timespan -minutes 1) -RepetitionDuration ([timeSpan]::maxvalue)
 $Settings = New-ScheduledTaskSettingsSet
 $Task = New-ScheduledTask -Action $Action -Trigger $Trigger -Settings $Settings
