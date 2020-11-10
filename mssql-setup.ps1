@@ -13,7 +13,7 @@ New-ADUser -Name "SQL Sysadmin" -UserPrincipalName sql_admin `
         -PassThru -erroraction stop | Enable-ADAccount
 
 
-# as .\administrator
+# on win2016-2 as .\administrator
 
 iwr https://go.microsoft.com/fwlink/?linkid=866664 -outfile mssql.exe
 $cwd=get-location
