@@ -1,3 +1,19 @@
+# As .\administrator
+
+mkdir c:\db_backups
+
+$acl = get-acl c:\db_backups
+$n = new-object system.security.accesscontrol.filesystemaccessrule -argumentlist ctlabs\sql_svc, FullControl, allow
+$acl.setaccessrule($n)
+set-acl c:\db_backups $acl
+
+$acl = get-acl c:\db_backups
+$n = new-object system.security.accesscontrol.filesystemaccessrule -argumentlist ctlabs\sql_admin, FullControl, allow
+$acl.setaccessrule($n)
+set-acl c:\db_backups $acl
+
+
+
 # As ctlabs\sql_admin 
 
 $db = get-sqldatabase -serverinstance localhost -name db
