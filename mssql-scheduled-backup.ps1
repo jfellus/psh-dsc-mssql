@@ -13,7 +13,8 @@ $acl.AddAccessRule($n)
 set-acl c:\db_backups $acl
 
 new-smbshare -name db_backups -path c:\db_backups
-grant-smbshareaccess -name db_backups -accountname ctlabs\sql_svc -accessright full
+grant-smbshareaccess -name db_backups -accountname ctlabs\sql_svc -accessright full -force
+grant-smbshareaccess -name db_backups -accountname ctlabs\sql_admin -accessright full -force
 revoke-smbshareaccess -name db_backups -accountname everyone
 
 # Scheduled task 
